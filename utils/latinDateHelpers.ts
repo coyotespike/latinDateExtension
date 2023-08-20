@@ -1,29 +1,29 @@
 export function getMonthNameForDaysBeforeNones(month: number): string {
   switch (month) {
     case 1:
-      return "Ianuarias";
+      return "Iānuāriās";
     case 2:
-      return "Februarias";
+      return "Februāriās";
     case 3:
-      return "Martias";
+      return "Mārtiās";
     case 4:
-      return "Apriles";
+      return "Aprīlēs";
     case 5:
-      return "Maias";
+      return "Māiās";
     case 6:
-      return "Junias";
+      return "Iūniās";
     case 7:
-      return "Julias";
+      return "Iūliās";
     case 8:
-      return "Augustas";
+      return "Augustās";
     case 9:
-      return "Septembres";
+      return "Septembrēs";
     case 10:
-      return "Octobres";
+      return "Octōbrēs";
     case 11:
-      return "Novembres";
+      return "Novembrēs";
     case 12:
-      return "Decembres";
+      return "Decembrēs";
     default:
       return "";
   }
@@ -42,29 +42,29 @@ export function getMonthNameForDaysBeforeIdes(month: number): string {
 export function getMonthNameForDaysAfterIdes(month: number): string {
   switch (month) {
     case 1:
-      return "Februarias";
+      return "Februāriās";
     case 2:
-      return "Martias";
+      return "Mārtiās";
     case 3:
-      return "Apriles";
+      return "Aprīlēs";
     case 4:
-      return "Maias";
+      return "Māiās";
     case 5:
-      return "Junias";
+      return "Iūniās";
     case 6:
-      return "Julias";
+      return "Iūliās";
     case 7:
-      return "Augustas";
+      return "Augustās";
     case 8:
-      return "Septembres";
+      return "Septembrēs";
     case 9:
-      return "Octobres";
+      return "Octōbrēs";
     case 10:
-      return "Novembres";
+      return "Novembrēs";
     case 11:
-      return "Decembres";
+      return "Decembrēs";
     case 12:
-      return "Ianuarias";
+      return "Iānuāriās";
     default:
       return "";
   }
