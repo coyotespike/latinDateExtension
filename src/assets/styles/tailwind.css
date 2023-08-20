@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Regular.woff2') format('woff2'),
+       url('/fonts/Cinzel-Regular.woff') format('woff'),
+       url('/fonts/Cinzel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Bold.woff2') format('woff2'),
+       url('/fonts/Cinzel-Bold.woff') format('woff'),
+       url('/fonts/Cinzel-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
