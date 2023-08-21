@@ -1,6 +1,7 @@
-function num2roman(input: number): string {
+function arabicToRomanNumerals(input: number): string {
   let output = "";
-  const len = input.toString().length;
+  const numStr = input.toString();
+  const len = numStr.length;
 
   function roman_val(
     N: number,
@@ -44,9 +45,9 @@ function num2roman(input: number): string {
     return out;
   }
 
-  const numStr = input.toString();
   for (let i = 0; i < len; i++) {
     const num = parseInt(numStr[i]);
+
     switch (len - i) {
       case 1:
         output += roman_val(num, "I", "V", "X");
@@ -68,7 +69,8 @@ function num2roman(input: number): string {
         break;
     }
   }
+
   return output;
 }
 
-export default num2roman;
+export default arabicToRomanNumerals;

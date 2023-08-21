@@ -1,4 +1,4 @@
-import num2roman from "./num2roman";
+import arabicToRomanNumerals from "./arabicToRomanNumerals";
 import {
   toAUC,
   getMonthInAccusative,
@@ -41,13 +41,13 @@ export function getLatinDate(
     latindate = `Hodiē est ${latinDayOfWeek}, prīdiē Īdūs ${latmon} `;
   } else if (day < nones) {
     const num = nones - day + 1;
-    const romanNum = num2roman(num).toLowerCase();
+    const romanNum = arabicToRomanNumerals(num).toLowerCase();
     const ordinalNum = ordinalMapping[romanNum];
     latmon = getMonthInAccusative(month);
     latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} (${ordinalNum}) Nōnās ${latmon} `;
   } else if (day < ides) {
     const num = ides - day + 1;
-    const romanNum = num2roman(num).toLowerCase();
+    const romanNum = arabicToRomanNumerals(num).toLowerCase();
     const ordinalNum = ordinalMapping[romanNum];
     latmon = getMonthInAccusative(month);
     latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} (${ordinalNum}) Īdūs ${latmon} `;
@@ -57,14 +57,14 @@ export function getLatinDate(
   } else {
     const numDays = getNumDaysForMonth(month, year);
     const num = numDays - day + 1; // +1 because we're counting the Kalends of the next month
-    const romanNum = num2roman(num).toLowerCase();
+    const romanNum = arabicToRomanNumerals(num).toLowerCase();
     const ordinalNum = ordinalMapping[romanNum];
     latmon = getMonthInAccusative(month + 1); // Next month
     latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} (${ordinalNum}) Kalendās ${latmon} `;
   }
 
   const aucyear = toAUC(year, month, day);
-  const convyear = num2roman(aucyear);
-  const gregorianYear = num2roman(date.getUTCFullYear());
+  const convyear = arabicToRomanNumerals(aucyear);
+  const gregorianYear = arabicToRomanNumerals(date.getUTCFullYear());
   return `${latindate}${convyear} a.u.c. (vel ${gregorianYear} A.D.)`;
 }
