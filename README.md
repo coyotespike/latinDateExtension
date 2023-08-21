@@ -41,14 +41,11 @@ At the moment, this extension is not in the Chrome store. To use it, you'll have
 1. Clone this repository.
 2. Run `yarn && yarn dev` in a terminal after navigating to the directory
 3. Load Extension on Chrome
-   1. Open - Chrome browser
-   2. Access - chrome://extensions
-   3. Check - Developer mode
-   4. Find - Load unpacked extension
-   5. Select - `dist` folder in this project (after dev or build)
-4. On a different page (not in extensions), hit Command-Shift-Y. The popup will open!
-5. If you want to build in production, Just run `yarn build` or `npm run build`.
-
+   a. Open - Chrome browser
+   b. Access - chrome://extensions
+   c. Check - Developer mode
+   d. Find - Load unpacked extension
+   e. Select - `dist` folder in this project (after dev or build)
 
 # Credit <a name="credit"></a>
 - I relied heavily on ChatGPT to help me translate @nivek1985's [sterling bash script](https://github.com/nivek1385/latindate) into TS. I have used his work for several years - all credit to him for everything in this repo! tibi grātiās agō et agimus!
