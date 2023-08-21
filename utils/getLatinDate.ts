@@ -57,5 +57,6 @@ export function getLatinDate(date: Date = new Date()): string {
 
   const aucyear = toAUC(year, month, day);
   const convyear = num2roman(aucyear);
-  return `${latindate}${convyear} a.u.c.`;
+  const gregorianYear = num2roman(date.getFullYear());
+  return `${latindate}${convyear} a.u.c. (vel ${gregorianYear} A.D.)`;
 }

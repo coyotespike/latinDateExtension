@@ -44,7 +44,7 @@ function num2roman(input: number): string {
     return out;
   }
 
-  let numStr = input.toString();
+  const numStr = input.toString();
   for (let i = 0; i < len; i++) {
     const num = parseInt(numStr[i]);
     switch (len - i) {
