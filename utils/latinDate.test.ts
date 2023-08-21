@@ -4,9 +4,10 @@ describe("getLatinDate", () => {
   it("should return correct Latin date for 28th August 2005", () => {
     const result = getLatinDate(new Date("2005-08-28"), 1);
     expect(result).toBe(
-      "Hodiē est diēs Sōlis, ante diem v Kalendās Septembrēs MMDCCLVIII a.u.c. (vel MMV A.D.)"
+      "Hodiē est diēs Sōlis, ante diem v (quīntum) Kalendās Septembrēs MMDCCLVIII a.u.c. (vel MMV A.D.)"
     );
   });
+
   it("should return correct Latin date for 1st January", () => {
     const result = getLatinDate(new Date("2023-01-01"), 1);
     expect(result).toBe(
@@ -27,6 +28,7 @@ describe("getLatinDate", () => {
       "Hodiē est diēs Iovis, prīdiē Kalendās Mārtiās MMDCCLXXVII a.u.c. (vel MMXXIV A.D.)"
     );
   });
+
   it("should return correct Latin date for 7th March (Nones of March)", () => {
     const result = getLatinDate(new Date("2023-03-07"), 1);
     expect(result).toBe(
@@ -44,21 +46,21 @@ describe("getLatinDate", () => {
   it("should return correct Latin date for 4th March (ante diem III Nōnās Mārtiīs)", () => {
     const result = getLatinDate(new Date("2023-03-04"), 1);
     expect(result).toBe(
-      "Hodiē est diēs Sāturnī, ante diem iv Nōnās Mārtiās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
+      "Hodiē est diēs Sāturnī, ante diem iv (quārtum) Nōnās Mārtiās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
     );
   });
 
   it("should return correct Latin date for 2nd March", () => {
     const result = getLatinDate(new Date("2023-03-02"), 1);
     expect(result).toBe(
-      "Hodiē est diēs Iovis, ante diem vi Nōnās Mārtiās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
+      "Hodiē est diēs Iovis, ante diem vi (sextum) Nōnās Mārtiās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
     );
   });
 
   it("should return correct Latin date for 13th March (two days before Ides of March)", () => {
     const result = getLatinDate(new Date("2023-03-13"), 1);
     expect(result).toBe(
-      "Hodiē est diēs Lūnae, ante diem iii Īdūs Mārtiās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
+      "Hodiē est diēs Lūnae, ante diem iii (tertium) Īdūs Mārtiās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
     );
   });
 
@@ -72,7 +74,7 @@ describe("getLatinDate", () => {
   it("should return correct Latin date for 16th March (day after Ides of March)", () => {
     const result = getLatinDate(new Date("2023-03-16"), 1);
     expect(result).toBe(
-      "Hodiē est diēs Iovis, ante diem xvii Kalendās Aprīlēs MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
+      "Hodiē est diēs Iovis, ante diem xvii (septimum decimum) Kalendās Aprīlēs MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
     );
   });
 
@@ -86,7 +88,7 @@ describe("getLatinDate", () => {
   it("should return correct Latin date and holiday greeting for 3rd January", () => {
     const result = getLatinDate(new Date("2023-01-03"), 1);
     expect(result).toBe(
-      "Hodiē est diēs Mārtis, ante diem iii Nōnās Iānuāriās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
+      "Hodiē est diēs Mārtis, ante diem iii (tertium) Nōnās Iānuāriās MMDCCLXXVI a.u.c. (vel MMXXIII A.D.)"
     );
   });
 });

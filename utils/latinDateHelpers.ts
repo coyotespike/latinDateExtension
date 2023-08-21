@@ -117,3 +117,23 @@ export const latinDaysOfWeek = [
   "diēs Veneris", // Friday
   "diēs Sāturnī", // Saturday
 ];
+
+export const ordinalMapping: { [key: string]: string } = {
+  i: "prīmum",
+  ii: "secundum",
+  iii: "tertium",
+  iv: "quārtum",
+  v: "quīntum",
+  vi: "sextum",
+  vii: "septimum",
+  viii: "octāvum",
+  ix: "nōnum",
+  x: "decimum",
+  xi: "ūndecimum",
+  xii: "duodecimum",
+  xiii: "tertium decimum",
+  xiv: "quārtum decimum",
+  xv: "quīntum decimum",
+  xvi: "sēdecimum",
+  xvii: "septimum decimum",
+};

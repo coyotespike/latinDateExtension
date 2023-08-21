@@ -5,6 +5,7 @@ import {
   getMonthInAblative,
   getNumDaysForMonth,
   latinDaysOfWeek,
+  ordinalMapping,
 } from "./latinDateHelpers";
 
 export function getLatinDate(
@@ -41,13 +42,15 @@ export function getLatinDate(
   } else if (day < nones) {
     const num = nones - day + 1;
     const romanNum = num2roman(num).toLowerCase();
+    const ordinalNum = ordinalMapping[romanNum];
     latmon = getMonthInAccusative(month);
-    latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} Nōnās ${latmon} `;
+    latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} (${ordinalNum}) Nōnās ${latmon} `;
   } else if (day < ides) {
     const num = ides - day + 1;
     const romanNum = num2roman(num).toLowerCase();
+    const ordinalNum = ordinalMapping[romanNum];
     latmon = getMonthInAccusative(month);
-    latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} Īdūs ${latmon} `;
+    latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} (${ordinalNum}) Īdūs ${latmon} `;
   } else if (day === getNumDaysForMonth(month, year) - 1) {
     latmon = getMonthInAccusative(month + 1); // Next month
     latindate = `Hodiē est ${latinDayOfWeek}, prīdiē Kalendās ${latmon} `;
@@ -55,8 +58,9 @@ export function getLatinDate(
     const numDays = getNumDaysForMonth(month, year);
     const num = numDays - day + 1; // +1 because we're counting the Kalends of the next month
     const romanNum = num2roman(num).toLowerCase();
+    const ordinalNum = ordinalMapping[romanNum];
     latmon = getMonthInAccusative(month + 1); // Next month
-    latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} Kalendās ${latmon} `;
+    latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} (${ordinalNum}) Kalendās ${latmon} `;
   }
 
   const aucyear = toAUC(year, month, day);
