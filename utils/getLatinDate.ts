@@ -7,11 +7,15 @@ import {
   latinDaysOfWeek,
 } from "./latinDateHelpers";
 
-export function getLatinDate(date: Date = new Date()): string {
+export function getLatinDate(
+  date: Date = new Date(),
+  timezoneOffset = 0
+): string {
   const day = date.getUTCDate();
   const month = date.getUTCMonth() + 1; // Months are 0-indexed in JS
   const year = date.getUTCFullYear();
-  const dayOfWeek = date.getUTCDay();
+  const dayOfWeek = (date.getDay() + timezoneOffset) % 7;
+
   const latinDayOfWeek = latinDaysOfWeek[dayOfWeek];
 
   const ides = [3, 5, 7, 10].includes(month) ? 15 : 13;
