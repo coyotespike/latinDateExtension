@@ -107,3 +107,13 @@ export function getNumDaysForMonth(month: number, year: number): number {
 export function isLeap(year: number): boolean {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
+
+export const latinDaysOfWeek = [
+  "diēs Sōlis", // Sunday
+  "diēs Lūnae", // Monday
+  "diēs Mārtis", // Tuesday
+  "diēs Mercuriī", // Wednesday
+  "diēs Iovis", // Thursday
+  "diēs Veneris", // Friday
+  "diēs Sāturnī", // Saturday
+];
