@@ -1,4 +1,37 @@
-export function getMonthNameForDaysBeforeNones(month: number): string {
+// Returns the month name in the ablative case
+export function getMonthInAblative(month: number): string {
+  switch (month) {
+    case 1:
+      return "Iānuāriīs";
+    case 2:
+      return "Februāriīs";
+    case 3:
+      return "Mārtiīs";
+    case 4:
+      return "Aprīlibus";
+    case 5:
+      return "Māiīs";
+    case 6:
+      return "Iūniīs";
+    case 7:
+      return "Iūliīs";
+    case 8:
+      return "Augustīs";
+    case 9:
+      return "Septembribus";
+    case 10:
+      return "Octōbribus";
+    case 11:
+      return "Novembribus";
+    case 12:
+      return "Decembribus";
+    default:
+      return "ERROR: Invalid month.";
+  }
+}
+
+// Returns the month name in the accusative case for days after the Ides
+export function getMonthInAccusative(month: number): string {
   switch (month) {
     case 1:
       return "Iānuāriās";
@@ -24,50 +57,20 @@ export function getMonthNameForDaysBeforeNones(month: number): string {
       return "Novembrēs";
     case 12:
       return "Decembrēs";
+    case 13: // handle wraparound
+      return "Iānuāriās";
     default:
       return "";
   }
 }
 
 // Helper function to convert a year to AUC
-export function toAUC(year: number): number {
-  const founding = 753;
-  return year + founding;
-}
-
-export function getMonthNameForDaysBeforeIdes(month: number): string {
-  return getMonthNameForDaysBeforeNones(month); // The naming is the same for days before Ides and days before Nones
-}
-
-export function getMonthNameForDaysAfterIdes(month: number): string {
-  switch (month) {
-    case 1:
-      return "Februāriās";
-    case 2:
-      return "Mārtiās";
-    case 3:
-      return "Aprīlēs";
-    case 4:
-      return "Māiās";
-    case 5:
-      return "Iūniās";
-    case 6:
-      return "Iūliās";
-    case 7:
-      return "Augustās";
-    case 8:
-      return "Septembrēs";
-    case 9:
-      return "Octōbrēs";
-    case 10:
-      return "Novembrēs";
-    case 11:
-      return "Decembrēs";
-    case 12:
-      return "Iānuāriās";
-    default:
-      return "";
+export function toAUC(year: number, month?: number, day?: number): number {
+  const aucYear = year + 753; // Convert to AUC year
+  if (month === 12 && day === 31) {
+    return aucYear + 1;
   }
+  return aucYear;
 }
 
 export function getNumDaysForMonth(month: number, year: number): number {
