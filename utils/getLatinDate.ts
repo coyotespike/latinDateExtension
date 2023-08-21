@@ -49,7 +49,7 @@ export function getLatinDate(date: Date = new Date()): string {
     latindate = `Hodiē est ${latinDayOfWeek}, prīdiē Kalendās ${latmon} `;
   } else {
     const numDays = getNumDaysForMonth(month, year);
-    const num = numDays - day + 2; // +2 because we're counting the Kalends of the next month
+    const num = numDays - day + 1; // +1 because we're counting the Kalends of the next month
     const romanNum = num2roman(num).toLowerCase();
     latmon = getMonthInAccusative(month + 1); // Next month
     latindate = `Hodiē est ${latinDayOfWeek}, ante diem ${romanNum} Kalendās ${latmon} `;
@@ -57,6 +57,6 @@ export function getLatinDate(date: Date = new Date()): string {
 
   const aucyear = toAUC(year, month, day);
   const convyear = num2roman(aucyear);
-  const gregorianYear = num2roman(date.getFullYear());
+  const gregorianYear = num2roman(date.getUTCFullYear());
   return `${latindate}${convyear} a.u.c. (vel ${gregorianYear} A.D.)`;
 }
