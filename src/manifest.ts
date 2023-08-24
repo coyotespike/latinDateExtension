@@ -6,22 +6,11 @@ const manifest: Manifest.WebExtensionManifest = {
   name: pkg.displayName,
   version: pkg.version,
   description: pkg.description,
-  // options_ui: {
-  //   page: 'src/pages/options/index.html',
-  // },
-  // background: {
-  //   service_worker: 'src/pages/background/index.js',
-  //   type: 'module',
-  // },
-  // action: {
-  //   default_popup: 'src/pages/popup/index.html',
-  //   default_icon: 'icon-34.png',
-  // },
   chrome_url_overrides: {
     newtab: "src/pages/newtab/index.html",
   },
   icons: {
-    "128": "icon-128.png",
+    "128": "spqr.png",
   },
   permissions: ["activeTab"],
   content_scripts: [
@@ -34,7 +23,7 @@ const manifest: Manifest.WebExtensionManifest = {
   // devtools_page: 'src/pages/devtools/index.html',
   web_accessible_resources: [
     {
-      resources: ["contentStyle.css", "icon-128.png", "icon-34.png"],
+      resources: ["contentStyle.css"],
       matches: [],
     },
   ],
