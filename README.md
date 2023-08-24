@@ -58,3 +58,12 @@ At the moment, this extension is not in the Chrome store. To use it, you'll have
 
 # Contributing <a name="contributing"></a>
 Feel free to open PRs or raise issues!
+
+# Publishing
+
+A few notes to self on publishing this package.
+
+- It's best to have `yarn dev` running to ensure the zip file created is of the latest compiled version.
+- Then a zip file can be made with just `zip -r latinDateZip dist`
+- The Chrome publishing process is trivially simple, just ensure no unnecessary permissions are present.
+Also, images can be resized (as they are required to have strict dimensions) by opening in Preview, then Tools, Adjust Size, uncheck Scale Proportionally.
