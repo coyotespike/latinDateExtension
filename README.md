@@ -11,6 +11,8 @@
 
 ## Intro <a name="intro"></a>
 
+You can install this Chrome extension from the webstore at [this link](https://chrome.google.com/webstore/detail/todays-date-in-latin/gflmdljllnbhhgaioacjnokoeldcgmke).
+
 This Chrome extension replaces your new tab with the image seen above. There's no better way to familiarize yourself with Latin ordinal numbers, days of the week, and monthly dates than to see them every day!
 
 Features:
